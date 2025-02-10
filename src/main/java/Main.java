@@ -307,6 +307,40 @@ class Main {
 
 	    return true; // כל הערכים מ-1 עד 10 הופיעו לפחות פעם אחת
 	}
+
+
+
+
+
+
+
+	public static Node<Integer> q15(Node<Integer> p)
+		{
+			int countMax=1;
+			int max=0;
+			Node<Integer> head=p;
+			Node<Integer> max=p;
+			while(p.getNext()!= null)
+			{
+				if(p.getValue() == p.getNext().getValue())
+				{
+					countMax++;
+				}
+				else
+				{
+					if(max < countMax)
+					{
+						max=countMax;
+						max=head;
+					}
+					head=p.getNext();
+				}
+				p=p.getNext();
+			}
+			return max;
+
+		}
+
   public static void main(String[] args) {
     System.out.println("Hello World!");
   }
